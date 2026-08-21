@@ -28,6 +28,7 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 - [Results](#results)
 - [Limitations](#limitations)
 - [Future Work](#future-work)
+- [Full Report](#full-report)
 
 ---
 
@@ -227,3 +228,9 @@ PUT ALL YOUR VIDEOS OF EVERYTHING HERE
 - Higher-torque motors or counterbalancing to offset gravity drag
 - Custom PCB to replace breadboard wiring
 - Refined calibration for tighter coordinate accuracy
+
+---
+
+## Full Report
+ 
+[Read the full capstone report](Files/Capstone_Final_Report.pdf)
