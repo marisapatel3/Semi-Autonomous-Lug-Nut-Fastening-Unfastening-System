@@ -1,6 +1,6 @@
 # BoltBlitz: Semi-Autonomous-Lug-Nut-Fastening-Unfastening-System
 
-McMaster Engineering Capstone (4OI6A/B), Group S12, Sept 2025 – Apr 2026.
+McMaster Engineering Capstone 4OI6A/B, Group S12, Sept 2025 – Apr 2026.
 
 Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a motorized drill to fasten/unfasten them with minimal manual intervention.
 
