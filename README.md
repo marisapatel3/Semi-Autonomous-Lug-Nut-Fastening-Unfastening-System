@@ -6,6 +6,9 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 
 `Python` `OpenCV` `MicroPython` `Raspberry Pi 4` `Raspberry Pi Pico 2` `ESP32-CAM` `NEMA-17 Stepper Motors` `TMC2209 Stepper Motor Drivers` `TB6612FNG Motor Driver` `BTS7960 Motor Driver` `CoreXY` `Onshape` `3D Printing`
 
+`![Assembled system](Media/Pictures/Physical_System_Setup.jpg)`
+*System fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.*
+
 ---
 
 ## Table of Contents
@@ -85,11 +88,8 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 ## Full System
 
-`![Assembled system](docs/media/full_system.jpg)`
-*System fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.*
-
-`![Tire hub test setup](docs/media/tire_hub_setup.jpg)`
-*Tire hub with bolts painted black for contrast, mounted on a stand for consistent camera framing.*
+`![Tire hub test setup](Media/Pictures/Tire_Hub_Setup.jpg)`
+*Tire hub with bolts, mounted on a stand for consistent camera framing.*
 
 ---
 
@@ -97,7 +97,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 ### 1. Computer Vision + Detection Subsystem
 
-**Hardware:** Raspberry Pi 4 (host, generates its own Wi-Fi hotspot), ESP32-CAM (imaging + onboard web server).
+**Hardware:** Raspberry Pi 4 (host, generates its own Wi-Fi hotspot), ESP32-CAM (imaging and onboard web server).
 
 **Pipeline** (`system_check.py` → `camera_capture.py` → `detection.py`, orchestrated by `main.py`):
 
