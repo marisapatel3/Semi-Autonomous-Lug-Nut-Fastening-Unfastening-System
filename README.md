@@ -194,7 +194,7 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 ## System Demonstrations
 
 <p align="center">
-<video src="Media/Videos/System_Check.mp4" width="500" controls></video><br>
+<video src="Media/Videos/System_Check.mp4" width="800" controls></video><br>
 <em>Running system_check.py, confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
 </p>
 
