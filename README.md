@@ -18,14 +18,13 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 - [Overview](#overview)
 - [Hardware & Software](#hardware--software)
 - [System Architecture](#system-architecture)
-- [Full System](#full-system)
 - [Subsystems](#subsystems)
   - [1. Computer Vision + Detection](#1-computer-vision--detection-subsystem)
   - [2. CoreXY Mechanical](#2-corexy-mechanical-subsystem)
   - [3. CoreXY Control Logic](#3-corexy-control-logic-subsystem)
   - [4. Drill / Actuator](#4-drill--actuator-subsystem)
 - [Running the System](#running-the-system)
-- [Demonstrations](#demonstrations)
+- [System Demonstrations](#system-demonstrations)
 - [Results](#results)
 - [Limitations](#limitations)
 - [Future Work](#future-work)
@@ -89,13 +88,6 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 ---
 
-## Full System
-
-![Tire hub test setup](Media/Pictures/Tire_Hub_Setup.jpg)
-*Tire hub with bolts, mounted on a stand for consistent camera framing.*
-
----
-
 ## Subsystems
 
 ### 1. Computer Vision + Detection Subsystem
@@ -149,8 +141,10 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - Structure modeled in Onshape, 3D-printed in PLA (Thode Makerspace), mounted to a 1.5cm plywood base for rigidity/portability.
 - Belt retainers clamp the belt to the carriage for a fixed belt-to-carriage connection. Belt tension was found to be critical for the vertical orientation (counteracts gravity-induced drift/slip).
 
-![CoreXY prototype](docs/media/corexy_prototype.jpg)
-*Assembled CoreXY frame with belt/pulley system and drill carriage mounted.*
+<p align="center">
+<img src="Media/Pictures/CoreXY_Motion_System.jpg" alt="CoreXY system" width="500"><br>
+<em>Assembled CoreXY frame with belt/pulley system and drill carriage mounted.</em>
+</p>
 
 ### 3. CoreXY Control Logic Subsystem
 
@@ -194,8 +188,9 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ---
 
-## Demonstrations
+## System Demonstrations
 
+PUT ALL YOUR VIDEOS OF EVERYTHING HERE
 `[video: full computer vision pipeline]`
 *`main.py` running system_check → camera_capture → detection end-to-end.*
 
