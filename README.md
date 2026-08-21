@@ -41,10 +41,10 @@ BoltBlitz is a semi-autonomous system that automates the fastening and unfasteni
 | Raspberry Pi 4 | Hosts the Wi-Fi hotspot linking all devices and runs the Python/OpenCV bolt detection pipeline |
 | ESP32-CAM | Captures the tire hub image used for bolt detection and streams live video for positioning |
 | Raspberry Pi Pico 2 | Motion/actuation controller that converts detected coordinates into CoreXY motor commands and drives the drill/actuator sequence |
-| NEMA-17 Stepper Motors (×2) | Drive the CoreXY belt/pulley system for X-Y carriage positioning |
-| TMC2209 Stepper Motor Drivers (×2) | Generate STEP signals to control the NEMA-17 stepper motors |
-| GT2 Timing Belt Pulleys | Translate stepper motor rotation into carriage motion along the CoreXY frame |
-| LM8LUU Linear Bearings | Support low-friction carriage translation along the linear rods |
+| NEMA-17 Stepper Motors (×2) | Drives the CoreXY belt/pulley system for X-Y carriage positioning |
+| TMC2209 Stepper Motor Drivers (×2) | Generates STEP signals to control the NEMA-17 stepper motors |
+| GT2 Timing Belt Pulleys | Translates stepper motor rotation into carriage motion along the CoreXY frame |
+| LM8LUU Linear Bearings | Supports low-friction carriage translation along the linear rods |
 | DC Drill Motor (repurposed IKEA power drill) | Executes the fastening/unfastening rotation on each lug nut |
 | Linear Actuator | Advances/retracts the drill to engage or disengage each bolt |
 | BTS7960 Motor Driver | Controls the high-current DC drill motor |
@@ -60,7 +60,7 @@ BoltBlitz is a semi-autonomous system that automates the fastening and unfasteni
 |---|---|
 | Python 3 | Bolt detection pipeline: `system_check.py`, `camera_capture.py`, `detection.py`, `main.py` |
 | OpenCV (cv2) | Grayscale conversion, Gaussian blur, thresholding, contour detection, image moments |
-| NumPy | Coordinate array math and pixel-to-mm conversion calculations |
+| NumPy | Coordinates array math and pixel-to-mm conversion calculations |
 | Requests | HTTP communication with the ESP32-CAM's `/control` and `/capture` endpoints |
 | MicroPython | Raspberry Pi Pico 2 firmware for CoreXY motion control and drill/actuator sequencing |
 | Onshape | CAD design of the CoreXY frame, carriage, and sliding plate |
@@ -86,7 +86,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 ## Full System
 
 `![Assembled system](docs/media/full_system.jpg)`
-*BoltBlitz fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.*
+*System fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.*
 
 `![Tire hub test setup](docs/media/tire_hub_setup.jpg)`
 *Tire hub with bolts painted black for contrast, mounted on a stand for consistent camera framing.*
