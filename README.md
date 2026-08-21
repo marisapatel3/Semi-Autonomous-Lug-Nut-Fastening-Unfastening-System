@@ -88,7 +88,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 ## Full System
 
-`![Tire hub test setup](Media/Pictures/Tire_Hub_Setup.jpg)`
+![Tire hub test setup](Media/Pictures/Tire_Hub_Setup.jpg)
 *Tire hub with bolts, mounted on a stand for consistent camera framing.*
 
 ---
@@ -146,7 +146,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - Structure modeled in Onshape, 3D-printed in PLA (Thode Makerspace), mounted to a 1.5cm plywood base for rigidity/portability.
 - Belt retainers clamp the belt to the carriage for a fixed belt-to-carriage connection. Belt tension was found to be critical for the vertical orientation (counteracts gravity-induced drift/slip).
 
-`![CoreXY prototype](docs/media/corexy_prototype.jpg)`
+![CoreXY prototype](docs/media/corexy_prototype.jpg)
 *Assembled CoreXY frame with belt/pulley system and drill carriage mounted.*
 
 ### 3. CoreXY Control Logic Subsystem
@@ -166,7 +166,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - **Power:** shared 12V LiPo, stepped down by a buck-boost converter to a 6V rail.
 - CAD for the carriage/sliding-plate assembly done in Onshape, fabricated via PrusaSlicer + 3D printing. Control logic was initially prototyped in Arduino IDE before final MicroPython integration.
 
-`![Drill carriage](docs/media/drill_carriage.jpg)`
+![Drill carriage](docs/media/drill_carriage.jpg)
 *3D-printed carriage housing the repurposed drill motor, sliding plate, and linear actuator.*
 
 ---
