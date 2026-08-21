@@ -142,7 +142,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - Belt retainers clamp the belt to the carriage for a fixed belt-to-carriage connection. Belt tension was found to be critical for the vertical orientation (counteracts gravity-induced drift/slip).
 
 <p align="center">
-<img src="Media/Pictures/CoreXY_Motion_System.jpg" alt="CoreXY system" width="500"><br>
+<img src="Media/Pictures/CoreXY_Motion_System.jpg" alt="CoreXY system" width="300"><br>
 <em>Assembled CoreXY frame with belt/pulley system and drill carriage mounted.</em>
 </p>
 
