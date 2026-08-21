@@ -8,6 +8,7 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 
 <p align="center">
 <img src="Media/Pictures/Physical_System_Setup.jpg" alt="Assembled system" width="500">
+  
 <em>System fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.</em>
 </p>
 
