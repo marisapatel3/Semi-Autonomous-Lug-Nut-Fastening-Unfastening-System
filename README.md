@@ -6,7 +6,7 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 
 `Python` `OpenCV` `MicroPython` `Raspberry Pi 4` `Raspberry Pi Pico 2` `ESP32-CAM` `NEMA-17 Stepper Motors` `TMC2209 Stepper Motor Drivers` `TB6612FNG Motor Driver` `BTS7960 Motor Driver` `CoreXY` `Onshape` `3D Printing`
 
-![Assembled system](Media/Pictures/Physical_System_Setup.jpg)
+<img src="Media/Pictures/Physical_System_Setup.jpg" alt="Assembled system" width="500">
 *System fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.*
 
 ---
