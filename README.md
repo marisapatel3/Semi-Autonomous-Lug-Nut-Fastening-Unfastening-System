@@ -11,7 +11,6 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 <em>System fully assembled, with the CoreXY frame, drill carriage, and camera mount on the plywood base.</em>
 </p>
 
-
 ---
 
 ## Table of Contents
@@ -194,7 +193,12 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ## System Demonstrations
 
-PUT ALL YOUR VIDEOS OF EVERYTHING HERE
+<p align="center">
+<video src="Media/Videos/System_Check.mp4" width="500" controls></video><br>
+<em>Running system_check.py, confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
+</p>
+
+
 `[video: full computer vision pipeline]`
 *`main.py` running system_check → camera_capture → detection end-to-end.*
 
