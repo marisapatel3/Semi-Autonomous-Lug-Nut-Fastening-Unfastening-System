@@ -163,8 +163,20 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - **Power:** shared 12V LiPo, stepped down by a buck-boost converter to a 6V rail.
 - CAD for the carriage/sliding-plate assembly done in Onshape, fabricated via PrusaSlicer + 3D printing. Control logic was initially prototyped in Arduino IDE before final MicroPython integration.
 
-![Drill carriage](docs/media/drill_carriage.jpg)
-*3D-printed carriage housing the repurposed drill motor, sliding plate, and linear actuator.*
+<table align="center">
+<tr>
+<td align="center">
+<img src="Media/Pictures/CAD_Carriage.jpg" width="400"><br>
+<em>CAD Design of Carriage in OnShape.</em>
+</td>
+<td align="center">
+<img src="Media/Pictures/Physical_Carriage.jpg" width="400"><br>
+<em>3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em>
+</td>
+</tr>
+</table>
+
+
 
 ---
 
