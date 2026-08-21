@@ -165,7 +165,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 <p align="center">
 <img src="Media/Pictures/CAD_Carriage.jpg" width="300">
-<img src="Media/Pictures/Physical_Carriage.jpg" width="250">
+<img src="Media/Pictures/Physical_Carriage.jpg" width="270">
 </p>
 <p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
 
