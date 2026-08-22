@@ -169,7 +169,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - **Drivers:** BTS7960 motor driver (high-current DC drill motor, handles torque-intensive load) and TB6612FNG motor driver (bidirectional linear actuator control).
 - **Control:** both the BTS7960 and TB6612FNG motor drivers are commanded by the same Raspberry Pi Pico 2 used for CoreXY motion, synchronizing engagement, rotation, and disengagement.
 - **Power:** shared 12V LiPo, stepped down by a buck-boost converter to a 6V rail.
-- CAD for the carriage/sliding-plate assembly done in Onshape, fabricated via PrusaSlicer + 3D printing. Control logic was initially prototyped in Arduino IDE before final MicroPython integration.
+- CAD for the carriage/sliding-plate assembly done in Onshape, fabricated via PrusaSlicer and 3D printing. Control logic was initially prototyped in Arduino IDE before final MicroPython integration.
 
 <p align="center">
   <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
