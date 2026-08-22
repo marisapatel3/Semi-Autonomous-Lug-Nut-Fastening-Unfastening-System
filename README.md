@@ -80,9 +80,9 @@ BoltBlitz is a semi-autonomous system that automates the fastening and unfasteni
 | Stage | Hardware | Output |
 |---|---|---|
 | Image capture | ESP32-CAM → Raspberry Pi 4 (Wi-Fi/HTTP) | Cropped tire hub image |
-| Bolt detection | Raspberry Pi 4 (Python/OpenCV) | `lug_coordinates.json` / `.txt` (mm coordinates) and `debug_detection.jpg` (detected bolt centers + outlines) |
-| Motion control | Raspberry Pi Pico 2 (MicroPython) → 2× TMC2209 stepper motor drivers → 2× NEMA-17 stepper motors | CoreXY carriage positioned at each bolt |
-| Fastening/unfastening | Pico 2 → TB6612FNG motor driver (linear actuator) + BTS7960 motor driver (DC drill motor) | Bolt fastened or unfastened |
+| Bolt detection | Raspberry Pi 4 (Python/OpenCV) | `lug_coordinates.json` / `.txt` (mm coordinates) and `debug_detection.jpg` (detected bolt centers & outlines) |
+| Motion control | Raspberry Pi Pico 2 (MicroPython) -> 2× TMC2209 stepper motor drivers -> 2× NEMA-17 stepper motors | CoreXY carriage positioned at each bolt |
+| Fastening/unfastening | Pico 2 -> TB6612FNG motor driver (linear actuator) -> BTS7960 motor driver (DC drill motor) | Bolt fastened or unfastened |
 
 Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared 6V rail across the drill and actuator drivers.
 
@@ -113,7 +113,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    <p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image capture from the ESP32-CAM.</em></p>
 
 3. **`detection.py`**: the actual bolt detection logic:
-   - Grayscale → 7×7 Gaussian blur
+   - Grayscale: 7×7 Gaussian blur
    - Inverted binary threshold at pixel value **100** to isolate the painted-black bolt faces from the reflective hub
    - 3×3 noise removal (2 iterations)
    - `cv2.findContours` on the thresholded mask, filtered by:
@@ -122,8 +122,8 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
      - estimated radius: **4–40 px**
    - Bolt center computed from image moments (`m10/m00`, `m01/m00`)
    - Duplicate detections are merged if two centers are closer than the larger of their two radii
-   - Pixel → mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up)
-   - Outputs: `lug_coordinates.json` (pixel + mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, consumed directly by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, plus the computed origin
+   - Pixel to mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up)
+   - Outputs: `lug_coordinates.json` (pixel & mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, consumed directly by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, plus the computed origin
    
    <p align="center">
      <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
@@ -152,7 +152,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 - **Controller:** Raspberry Pi Pico 2, programmed in MicroPython (developed in VS Code over serial).
 - **Drivers:** two Adafruit TMC2209 stepper motor drivers (STEP interface) driving the two NEMA-17 stepper motors.
-- **Power:** AC→DC supply feeding both TMC2209 stepper motor drivers.
+- **Power:** AC to DC supply feeding both TMC2209 stepper motor drivers.
 - **Logic flow:** reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and, since CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously (not one motor per axis). The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in sequence (a "star" traversal pattern between bolts, mirroring a manual lug-nut fastening order).
 - Motion parameters (mm/step conversion, speed, acceleration) were iteratively tuned against the vertical-mount CoreXY frame, which was the dominant limiter on achievable speed/smoothness (see [Limitations](#limitations)).
 
@@ -181,7 +181,7 @@ Run from the Raspberry Pi 4 with the Pi's hotspot active and the ESP32-CAM power
 python3 main.py
 ```
 
-This runs the full vision pipeline end-to-end: `system_check.py` → `camera_capture.py` → `detection.py`. Any stage failing halts the run (non-zero exit code) before the next stage starts. Each script can also be run standalone for debugging:
+This runs the full vision pipeline end-to-end: `system_check.py` → `camera_capture.py` → `detection.py`. Any stage failing stops the run (non-zero exit code) before the next stage starts. Each script can also be run standalone for debugging:
 
 ```bash
 python3 system_check.py     # verify hotspot / ESP32-CAM / laptop connectivity
@@ -224,7 +224,7 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 ## Future Work
 
 - Real-time communication between vision and motion controllers to remove manual hand-off between stages
-- Limit switches + stored home position for absolute positioning
+- Limit switches and stored home position for absolute positioning
 - Higher-torque motors or counterbalancing to offset gravity drag
 - Custom PCB to replace breadboard wiring
 - Refined calibration for tighter coordinate accuracy
