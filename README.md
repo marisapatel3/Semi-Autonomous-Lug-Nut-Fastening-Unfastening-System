@@ -124,9 +124,11 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    - Duplicate detections are merged if two centers are closer than the larger of their two radii
    - Pixel → mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up)
    - Outputs: `lug_coordinates.json` (pixel + mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, consumed directly by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, plus the computed origin
-
-   `![Debug detection output](docs/media/debug_detection.jpg)`
-   *Debug image from `detection.py`. Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).*
+   
+   <p align="center">
+     <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="500"><br>
+     <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
+   </p>
    
    <video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
    <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured hub image, producing the debug overlay and coordinate output.</em></p>
@@ -142,8 +144,8 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - Belt retainers clamp the belt to the carriage for a fixed belt-to-carriage connection. Belt tension was found to be critical for the vertical orientation (counteracts gravity-induced drift/slip).
 
 <p align="center">
-<img src="Media/Pictures/CoreXY_Motion_System.jpg" alt="CoreXY system" width="350"><br>
-<em>Assembled CoreXY frame with belt/pulley system and drill carriage mounted.</em>
+  <img src="Media/Pictures/CoreXY_Motion_System.jpg" alt="CoreXY system" width="350"><br>
+  <em>Assembled CoreXY frame with belt/pulley system and drill carriage mounted.</em>
 </p>
 
 ### 3. CoreXY Control Logic Subsystem
@@ -197,16 +199,6 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 
 
-<p align="center">
-<a href="Media/Videos/Main.mp4">▶ Watch: Pre-flight check demo</a><br>
-<em>Pre-flight check confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
-</p>
-
-
-<p align="center">
-<video src="Media/Videos/System_Check.mp4" width="800" controls></video><br>
-<em>Running system_check.py, confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
-</p>
 
 
 `[video: full computer vision pipeline]`
