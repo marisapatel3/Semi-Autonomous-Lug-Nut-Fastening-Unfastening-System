@@ -126,7 +126,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    - Outputs: `lug_coordinates.json` (pixel + mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, consumed directly by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, plus the computed origin
    
    <p align="center">
-     <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="500"><br>
+     <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
      <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
    </p>
    
