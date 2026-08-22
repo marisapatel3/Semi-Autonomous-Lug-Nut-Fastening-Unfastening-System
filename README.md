@@ -107,12 +107,22 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    `[video: system_check.py running]`
    *Pre-flight check confirming hotspot, ESP32-CAM, web server, and laptop connectivity.*
 
-2. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then on user ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`) to remove background. Saves both a timestamped copy and `latest_capture.jpg`.
+   
+
+https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8
+
+
+
+
+
+
+
+3. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then on user ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`) to remove background. Saves both a timestamped copy and `latest_capture.jpg`.
 
    `[video: camera_capture.py running]`
    *Live stream positioning and still-image capture from the ESP32-CAM.*
 
-3. **`detection.py`**: the actual bolt detection logic:
+4. **`detection.py`**: the actual bolt detection logic:
    - Grayscale → 7×7 Gaussian blur
    - Inverted binary threshold at pixel value **100** to isolate the painted-black bolt faces from the reflective hub
    - 3×3 noise removal (2 iterations)
@@ -192,6 +202,10 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 ---
 
 ## System Demonstrations
+
+
+
+
 
 <p align="center">
 <a href="Media/Videos/Main.mp4">▶ Watch: Pre-flight check demo</a><br>
