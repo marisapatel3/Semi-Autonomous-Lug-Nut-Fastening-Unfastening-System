@@ -104,12 +104,11 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
    Any failure halts the pipeline before capture is attempted.
 
-   Demonstration of system_check.py: confirming hotspot, ESP32-CAM, web server, and laptop connectivity.
-
-<details>
-<summary>▶ Watch: system_check.py demo</summary>
+<p align="center">
 <video src="https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8" controls></video>
-</details>
+<br>
+<em>Demonstration of system_check.py: confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
+</p>
 
 3. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then on user ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`) to remove background. Saves both a timestamped copy and `latest_capture.jpg`.
 
