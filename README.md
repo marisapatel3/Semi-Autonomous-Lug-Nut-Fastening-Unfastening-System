@@ -139,7 +139,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 - Two NEMA-17 stepper motors driving GT2 timing belt pulleys (2mm pitch, 6mm width), height-adjustable on the motor shaft to align with the top/bottom belt run.
 - Linear motion on 250mm solid rods (frame sides) and 200mm hollow rods (center, weight reduction), riding on LM8LUU linear bearings.
-- CoreXY was chosen over a standard XY gantry for its lower moving mass and higher achievable speed, since both motors drive combined X+Y motion simultaneously rather than one motor per axis.
+- CoreXY was chosen over a standard XY gantry for its lower moving mass and higher achievable speed, since both motors drive combined X and Y motion simultaneously rather than one motor per axis.
 - Structure modeled in Onshape, 3D-printed in PLA (Thode Makerspace), mounted to a 1.5cm plywood base for rigidity/portability.
 - Belt retainers clamp the belt to the carriage for a fixed belt-to-carriage connection. Belt tension was found to be critical for the vertical orientation (counteracts gravity-induced drift/slip).
 
