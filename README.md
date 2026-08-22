@@ -124,7 +124,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    - Duplicate detections are merged if two centers are closer than the larger of their two radii
    - Pixel to mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up)
    - Outputs: `lug_coordinates.json` (pixel & mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, consumed directly by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, plus the computed origin
-   
+
    <p align="center">
      <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
      <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
@@ -156,11 +156,11 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - **Logic flow:** reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and, since CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously (not one motor per axis). The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in sequence (a "star" traversal pattern between bolts, mirroring a manual lug-nut fastening order).
 - Motion parameters (mm/step conversion, speed, acceleration) were iteratively tuned against the vertical-mount CoreXY frame, which was the dominant limiter on achievable speed/smoothness (see [Limitations](#limitations)).
 
-  <p align="center">
-    <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
-    <img src="Media/Pictures/Physical_Carriage.jpg" width="320">
-  </p>
-  <p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
+<p align="center">
+  <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
+  <img src="Media/Pictures/Physical_Carriage.jpg" width="320">
+</p>
+<p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
 
 ### 4. Drill / Actuator Subsystem
 
