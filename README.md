@@ -1,4 +1,4 @@
-# BoltBlitz: Semi-Autonomous-Lug-Nut-Fastening-Unfastening-System
+# BoltBlitz: Semi-Autonomous Lug Nut Fastening/Unfastening System
 
 McMaster Engineering Capstone 4OI6A/B, Group S12, Sept 2025 – Apr 2026.
 
