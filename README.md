@@ -193,9 +193,10 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ## System Demonstrations
 
-https://github.com/marisapatel3/Semi-Autonomous-Lug-Nut-Fastening-Unfastening-System/blob/main/Media/Videos/Main.mp4
-
-<p align="center"><em>Pre-flight check confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em></p>
+<p align="center">
+<a href="Media/Videos/Main.mp4">▶ Watch: Pre-flight check demo</a><br>
+<em>Pre-flight check confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
+</p>
 
 
 <p align="center">
