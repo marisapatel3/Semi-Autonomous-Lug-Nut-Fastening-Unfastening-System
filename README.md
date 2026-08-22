@@ -130,7 +130,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
      <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
    </p>
    
-   <video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
+   <video src="https://github.com/user-attachments/assets/9e853fc7-a148-4d6d-bf81-0cb927b02b10" controls></video>
    <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured hub image, producing the debug overlay and coordinate output.</em></p>
 
    Detection parameters (threshold value, circularity, brightness) were tuned experimentally. See [Results](#results).
@@ -195,17 +195,11 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ## System Demonstrations
 
+<video src="https://github.com/user-attachments/assets/ca87239c-2418-439b-8eec-c9776f859a82" controls></video>
+<p align="center"><em>Demonstration of main.py from the Computer Vision + Detection Subsystem: running system_check -> camera_capture -> detection end-to-end.</em></p>
 
-
-
-
-
-
-`[video: full computer vision pipeline]`
-*`main.py` running system_check → camera_capture → detection end-to-end.*
-
-`[video: drill fastening/unfastening lug nuts]`
-*CoreXY carriage moving to each detected bolt coordinate and the drill engaging/disengaging to fasten and unfasten the lug nut.*
+<video src="https://github.com/user-attachments/assets/794cd37d-d199-41a5-8a0e-480fa2d8a67d" controls></video>
+<p align="center"><em>Demonstration of CoreXY carriage moving to each detected bolt coordinate and the drill engaging/disengaging to fasten and unfasten the lug nut.</em></p>
 
 ---
 
