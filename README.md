@@ -124,14 +124,14 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    - Duplicate detections are merged if two centers are closer than the larger of their two radii
    - Pixel to mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up)
    - Outputs: `lug_coordinates.json` (pixel & mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, consumed directly by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, plus the computed origin
-
-   <p align="center">
-     <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
-     <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
-   </p>
    
-   <video src="https://github.com/user-attachments/assets/9e853fc7-a148-4d6d-bf81-0cb927b02b10" controls></video>
-   <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured hub image, producing the debug overlay and coordinate output.</em></p>
+     <p align="center">
+       <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
+       <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
+     </p>
+     
+     <video src="https://github.com/user-attachments/assets/9e853fc7-a148-4d6d-bf81-0cb927b02b10" controls></video>
+     <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured hub image, producing the debug overlay and coordinate output.</em></p>
 
    Detection parameters (threshold value, circularity, brightness) were tuned experimentally. See [Results](#results).
 
@@ -157,10 +157,10 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - Motion parameters (mm/step conversion, speed, acceleration) were iteratively tuned against the vertical-mount CoreXY frame, which was the dominant limiter on achievable speed/smoothness (see [Limitations](#limitations)).
 
 <p align="center">
-  <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
-  <img src="Media/Pictures/Physical_Carriage.jpg" width="320">
+  <img src="Media/Pictures/CoreXY_Control_Breadboard_Circuit.jpg" width="350">
+  <img src="Media/Pictures/NEMA_17.jpg" width="320">
 </p>
-<p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
+<p align="center"><em>CoreXY Control Logic Breadboard Circuit and NEMA 17 Stepper Motors.</em></p>
 
 ### 4. Drill / Actuator Subsystem
 
