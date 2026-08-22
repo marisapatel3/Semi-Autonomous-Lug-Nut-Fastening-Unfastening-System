@@ -156,6 +156,12 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - **Logic flow:** reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and, since CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously (not one motor per axis). The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in sequence (a "star" traversal pattern between bolts, mirroring a manual lug-nut fastening order).
 - Motion parameters (mm/step conversion, speed, acceleration) were iteratively tuned against the vertical-mount CoreXY frame, which was the dominant limiter on achievable speed/smoothness (see [Limitations](#limitations)).
 
+  <p align="center">
+    <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
+    <img src="Media/Pictures/Physical_Carriage.jpg" width="320">
+  </p>
+  <p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
+
 ### 4. Drill / Actuator Subsystem
 
 - **Drive motor:** DC motor repurposed from an IKEA power drill, chosen for torque and compact form factor, mounted on a sliding plate on a 3D-printed carriage.
@@ -166,8 +172,8 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - CAD for the carriage/sliding-plate assembly done in Onshape, fabricated via PrusaSlicer + 3D printing. Control logic was initially prototyped in Arduino IDE before final MicroPython integration.
 
 <p align="center">
-<img src="Media/Pictures/CAD_Carriage.jpg" width="350">
-<img src="Media/Pictures/Physical_Carriage.jpg" width="320">
+  <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
+  <img src="Media/Pictures/Physical_Carriage.jpg" width="320">
 </p>
 <p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
 
