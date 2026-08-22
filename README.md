@@ -107,12 +107,12 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    <video src="https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8" controls></video>
    <p align="center"><em>Demonstration of system_check.py: confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em></p>
 
-3. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then on user ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`) to remove background. Saves both a timestamped copy and `latest_capture.jpg`.
+2. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then on user ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`) to remove background. Saves both a timestamped copy and `latest_capture.jpg`.
 
-<video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
-<p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image capture from the ESP32-CAM.</em></p>
+   <video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
+   <p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image capture from the ESP32-CAM.</em></p>
 
-5. **`detection.py`**: the actual bolt detection logic:
+3. **`detection.py`**: the actual bolt detection logic:
    - Grayscale → 7×7 Gaussian blur
    - Inverted binary threshold at pixel value **100** to isolate the painted-black bolt faces from the reflective hub
    - 3×3 noise removal (2 iterations)
