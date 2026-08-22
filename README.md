@@ -158,7 +158,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 <p align="center">
   <img src="Media/Pictures/CoreXY_Control_Breadboard_Circuit.jpg" width="350">
-  <img src="Media/Pictures/NEMA_17.jpg" width="320">
+  <img src="Media/Pictures/NEMA_17.jpg" width="350">
 </p>
 <p align="center"><em>CoreXY Control Logic Breadboard Circuit and NEMA 17 Stepper Motors.</em></p>
 
