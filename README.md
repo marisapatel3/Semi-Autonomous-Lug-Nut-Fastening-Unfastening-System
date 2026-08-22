@@ -105,7 +105,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    Any failure halts the pipeline before capture is attempted.
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8" width="300" controls></video>
+  <video src="https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8" width="100" controls></video>
   <em>Demonstration of system_check.py: confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em>
 </p>
 
