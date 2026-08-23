@@ -79,10 +79,10 @@ BoltBlitz is a semi-autonomous system that automates the fastening and unfasteni
 
 | Stage | Hardware | Output |
 |---|---|---|
-| Image capture | ESP32-CAM -> Raspberry Pi 4 (Wi-Fi/HTTP) | Cropped tire hub image |
-| Bolt detection | Raspberry Pi 4 (Python/OpenCV) | `lug_coordinates.json` / `.txt` (mm coordinates) and `debug_detection.jpg` (detected bolt centers & outlines) |
-| Motion control | Raspberry Pi Pico 2 (MicroPython) -> 2× TMC2209 stepper motor drivers -> 2× NEMA-17 stepper motors | CoreXY carriage positioned at each bolt |
-| Fastening/unfastening | Pico 2 -> TB6612FNG motor driver (linear actuator) -> BTS7960 motor driver (DC drill motor) | Bolt fastened or unfastened |
+| Image Capture | ESP32-CAM -> Raspberry Pi 4 (Wi-Fi/HTTP) | Cropped tire hub image |
+| Bolt Detection | Raspberry Pi 4 (Python/OpenCV) | `lug_coordinates.json` / `.txt` (mm coordinates) and `debug_detection.jpg` (detected bolt centers & outlines) |
+| Motion Control | Raspberry Pi Pico 2 (MicroPython) -> 2× TMC2209 stepper motor drivers -> 2× NEMA-17 stepper motors | CoreXY carriage positioned at each bolt |
+| Fastening/Unfastening | Pico 2 -> TB6612FNG motor driver (linear actuator) -> BTS7960 motor driver (DC drill motor) | Bolt fastened or unfastened |
 
 Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared 6V rail across the drill and actuator drivers.
 
