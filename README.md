@@ -96,7 +96,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 **Pipeline** (`system_check.py` -> `camera_capture.py` -> `detection.py`, all run by `main.py`):
 
-1. **`system_check.py`**: performs a connectivity check before anything else runs. Verifies via `nmcli`/`nmap`/`curl`:
+1. **`system_check.py`**: Performs a connectivity check before anything else runs. Verifies via `nmcli`/`nmap`/`curl`:
    - Pi hotspot (`S12pi4net`) is active on `wlan0`
    - ESP32-CAM is reachable at `10.42.0.149`
    - ESP32-CAM's onboard web server returns HTTP 200
@@ -107,23 +107,23 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    <video src="https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8" controls></video>
    <p align="center"><em>Demonstration of system_check.py: confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em></p>
 
-2. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then when user presses ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`). Saves the photo taken as `latest_capture.jpg`.
+2. **`camera_capture.py`**: Configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then when user presses ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`). Saves the photo taken as `latest_capture.jpg`.
 
    <video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
    <p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image captured from the ESP32-CAM.</em></p>
 
-3. **`detection.py`**: the actual bolt detection logic:
+3. **`detection.py`**: The actual bolt detection logic:
    - Grayscale: 7×7 Gaussian blur
-   - Inverted binary threshold at pixel value **100** to isolate the black painted bolt faces from the reflective hub
+   - Inverted binary threshold at pixel value **100** to isolate the black painted bolt faces from the reflective hub.
    - 3×3 noise removal (2 iterations)
    - `cv2.findContours` on the thresholded mask, filtered by:
      - Area: **80–3000 px²**
      - Circularity `4π·area/perimeter²` ≥ **0.6**
      - Estimated radius: **4–40 px**
-   - Bolt center computed from image moments (`m10/m00`, `m01/m00`)
-   - Duplicate detections are merged if two centers are closer than the larger of their two radii
-   - Pixel to mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up)
-   - Outputs: `lug_coordinates.json` (pixel & mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, used by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, alongside the computed origin
+   - Bolt center computed from image moments (`m10/m00`, `m01/m00`).
+   - Duplicate detections are merged if two centers are closer than the larger of their two radii.
+   - Pixel to mm conversion via a scale factor `pixels_per_mm = avg_bolt_diameter_px / 5.0mm` (known physical bolt diameter), with the origin set to the average of all detected bolt centers (positive X = right, positive Y = up).
+   - Outputs: `lug_coordinates.json` (pixel & mm pairs), `lug_coordinates.txt` (mm coordinates ×100, integer, one bolt per line, used by the Pico 2), and `debug_detection.jpg`, a debug image showing the detected center point and outer perimeter of each bolt, alongside the computed origin.
    
      <p align="center">
        <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
@@ -151,9 +151,9 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 ### 3. CoreXY Control Logic Subsystem
 
 - **Controller:** Raspberry Pi Pico 2, programmed in MicroPython (developed in VS Code over serial).
-- **Drivers:** two Adafruit TMC2209 stepper motor drivers (STEP interface) driving the two NEMA-17 stepper motors.
+- **Drivers:** Two Adafruit TMC2209 stepper motor drivers (STEP interface) driving the two NEMA-17 stepper motors.
 - **Power:** AC to DC supply feeding both TMC2209 stepper motor drivers.
-- **Logic flow:** reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and since the CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously. The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in a "star" sequence (mirroring a manual lug-nut fastening order).
+- **Logic flow:** Reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and since the CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously. The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in a "star" sequence (mirroring a manual lug-nut fastening order).
 - Motion parameters (mm/step conversion, speed, acceleration) were iteratively tuned against the vertically mounted CoreXY frame, which was the main limiter on achievable speed/smoothness (see [Limitations](#limitations)).
 
 <p align="center">
@@ -165,10 +165,10 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 ### 4. Drill / Actuator Subsystem
 
 - **Drive motor:** DC motor repurposed from an IKEA power drill, chosen for torque and compact form factor, mounted on a 3D-printed sliding plate and carriage.
-- **Linear actuator:** provides about 1 inch of Z-direction travel to engage/disengage the drill from the lug nut, extending to engage the bit and retracting slightly during fastening/unfastening to preserve alignment and avoid thread damage.
+- **Linear actuator:** Provides about 1 inch of Z-direction travel to engage/disengage the drill from the lug nut, extending to engage the bit and retracting slightly during fastening/unfastening to preserve alignment and avoid thread damage.
 - **Drivers:** BTS7960 motor driver (high-current DC drill motor, handles torque-intensive load) and TB6612FNG motor driver (bidirectional linear actuator control).
-- **Control:** both the BTS7960 and TB6612FNG motor drivers are commanded by the same Raspberry Pi Pico 2 used for the CoreXY motion, synchronizing engagement, rotation, and disengagement.
-- **Power:** shared 12V LiPo, stepped down by a buck-boost converter to a 6V rail.
+- **Control:** Both the BTS7960 and TB6612FNG motor drivers are commanded by the same Raspberry Pi Pico 2 used for the CoreXY motion, synchronizing engagement, rotation, and disengagement.
+- **Power:** Shared 12V LiPo, stepped down by a buck-boost converter to a 6V rail.
 - CAD for the carriage/sliding-plate assembly was done in Onshape, fabricated via PrusaSlicer and 3D printing. Control logic was initially prototyped in Arduino IDE before final MicroPython integration.
 
 <p align="center">
@@ -205,16 +205,16 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 <p align="center"><em>Demonstration of main.py from the Computer Vision + Detection Subsystem: running system_check -> camera_capture -> detection end-to-end.</em></p>
 
 <video src="https://github.com/user-attachments/assets/794cd37d-d199-41a5-8a0e-480fa2d8a67d" controls></video>
-<p align="center"><em>Demonstration of CoreXY carriage moving to each detected bolt coordinate and the drill engaging/disengaging to fasten and unfasten the lug nut.</em></p>
+<p align="center"><em>Demonstration of CoreXY carriage moving to each detected bolt coordinate and the drill engaging/disengaging to fasten and unfasten the lug nuts.</em></p>
 
 ---
 
 ## Results
 
-- **Bolt detection:** reliable once bolt surfaces were painted matte black. Optimal LED brightness of 150/255, threshold value 100, and circularity ≥ 0.6 were the tuned values for detecting all bolts without noise.
-- **CoreXY positioning:** high repeatability at a stable **~6 mm/s**. Diagonal motion caused vibration at higher speeds, resolved by reducing speed and tensioning belts.
-- **Drill/actuator:** consistently engaged, rotated, and disengaged across multiple cycles.
-- **End-to-end:** full pipeline executed successfully with minimal manual intervention between stages.
+- **Bolt detection:** Reliable once bolt surfaces were painted matte black. Optimal LED brightness of 150/255, threshold value 100, and circularity ≥ 0.6 were the tuned values for detecting all bolts without noise.
+- **CoreXY positioning:** High repeatability at a stable **~6 mm/s**. Diagonal motion caused vibration at higher speeds, resolved by reducing speed and tensioning belts.
+- **Drill/actuator:** Consistently engaged, rotated, and disengaged across multiple cycles.
+- **End-to-end:** Full pipeline executed successfully with minimal manual intervention between stages.
 
 ---
 
@@ -229,11 +229,11 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ## Future Work
 
-- Real-time communication between vision and motion controllers to remove manual hand-off between stages
-- Limit switches and stored home position for absolute positioning
-- Higher-torque motors or counterbalancing to offset gravity drag
-- Custom PCB to replace breadboard wiring
-- Refined calibration for tighter coordinate accuracy
+- Real-time communication between vision and motion controllers to remove manual hand-off between stages.
+- Limit switches and stored home position for absolute positioning.
+- Higher-torque motors or counterbalancing to offset gravity drag.
+- Custom PCB to replace breadboard wiring.
+- Refined calibration for tighter coordinate accuracy.
 
 ---
 
