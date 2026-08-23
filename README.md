@@ -153,7 +153,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 - **Controller:** Raspberry Pi Pico 2, programmed in MicroPython (developed in VS Code over serial).
 - **Drivers:** Two Adafruit TMC2209 stepper motor drivers (STEP interface) driving the two NEMA-17 stepper motors.
 - **Power:** AC to DC supply feeding both TMC2209 stepper motor drivers.
-- **Logic flow:** Reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and since the CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously. The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in a "star" sequence (mirroring a manual lug-nut fastening order).
+- **Logic Flow:** Reads the mm coordinate text file produced by `detection.py`, converts each target to relative/absolute displacement from home, and since the CoreXY axes are coupled, commands both NEMA-17 stepper motors simultaneously. The Pico 2 generates synchronized STEP signals for both TMC2209 stepper motor drivers, and the carriage moves through each coordinate in a "star" sequence (mirroring a manual lug-nut fastening order).
 - Motion parameters (mm/step conversion, speed, acceleration) were iteratively tuned against the vertically mounted CoreXY frame, which was the main limiter on achievable speed/smoothness (see [Limitations](#limitations)).
 
 <p align="center">
@@ -164,8 +164,8 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 ### 4. Drill / Actuator Subsystem
 
-- **Drive motor:** DC motor repurposed from an IKEA power drill, chosen for torque and compact form factor, mounted on a 3D-printed sliding plate and carriage.
-- **Linear actuator:** Provides about 1 inch of Z-direction travel to engage/disengage the drill from the lug nut, extending to engage the bit and retracting slightly during fastening/unfastening to preserve alignment and avoid thread damage.
+- **Drive Motor:** DC motor repurposed from an IKEA power drill, chosen for torque and compact form factor, mounted on a 3D-printed sliding plate and carriage.
+- **Linear Actuator:** Provides about 1 inch of Z-direction travel to engage/disengage the drill from the lug nut, extending to engage the bit and retracting slightly during fastening/unfastening to preserve alignment and avoid thread damage.
 - **Drivers:** BTS7960 motor driver (high-current DC drill motor, handles torque-intensive load) and TB6612FNG motor driver (bidirectional linear actuator control).
 - **Control:** Both the BTS7960 and TB6612FNG motor drivers are commanded by the same Raspberry Pi Pico 2 used for the CoreXY motion, synchronizing engagement, rotation, and disengagement.
 - **Power:** Shared 12V LiPo, stepped down by a buck-boost converter to a 6V rail.
@@ -211,10 +211,10 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ## Results
 
-- **Bolt detection:** Reliable once bolt surfaces were painted matte black. Optimal LED brightness of 150/255, threshold value 100, and circularity ≥ 0.6 were the tuned values for detecting all bolts without noise.
-- **CoreXY positioning:** High repeatability at a stable **~6 mm/s**. Diagonal motion caused vibration at higher speeds, resolved by reducing speed and tensioning belts.
-- **Drill/actuator:** Consistently engaged, rotated, and disengaged across multiple cycles.
-- **End-to-end:** Full pipeline executed successfully with minimal manual intervention between stages.
+- **Bolt Detection:** Reliable once bolt surfaces were painted matte black. Optimal LED brightness of 150/255, threshold value 100, and circularity ≥ 0.6 were the tuned values for detecting all bolts without noise.
+- **CoreXY Positioning:** High repeatability at a stable **~6 mm/s**. Diagonal motion caused vibration at higher speeds, resolved by reducing speed and tensioning belts.
+- **Drill/Actuator:** Consistently engaged, rotated, and disengaged across multiple cycles.
+- **End-to-End:** Full pipeline executed successfully with minimal manual intervention between stages.
 
 ---
 
