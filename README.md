@@ -8,7 +8,7 @@ Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a mot
 
 <p align="center">
 <img src="Media/Pictures/Physical_System_Setup.jpg" alt="Assembled system" width="500"><br>
-<em>System fully assembled with the CoreXY frame, drill carriage, and camera mount with the tire hub.</em>
+<em>System Fully Assembled with the CoreXY Frame, Drill Carriage, and Camera Mount with the Tire Hub.</em>
 </p>
 
 ---
@@ -105,12 +105,12 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    Any failure stops the pipeline before an image capture is attempted.
 
    <video src="https://github.com/user-attachments/assets/376dbaa9-75e4-477d-96ca-7aaf51f7e6c8" controls></video>
-   <p align="center"><em>Demonstration of system_check.py: confirming hotspot, ESP32-CAM, web server, and laptop connectivity.</em></p>
+   <p align="center"><em>Demonstration of system_check.py: Confirming Hotspot, ESP32-CAM, Web Server, and Laptop Connectivity.</em></p>
 
 2. **`camera_capture.py`**: Configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then when user presses ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`). Saves the photo taken as `latest_capture.jpg`.
 
    <video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
-   <p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image captured from the ESP32-CAM.</em></p>
+   <p align="center"><em>Demonstration of camera_capture.py: Starts Live Stream, Positioning done by User, and Still-Image Captured from the ESP32-CAM.</em></p>
 
 3. **`detection.py`**: The actual bolt detection logic:
    - Grayscale: 7×7 Gaussian blur
@@ -127,11 +127,11 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
    
      <p align="center">
        <img src="Media/Pictures/Debug_Detection.jpg" alt="Debug Photo" width="350"><br>
-       <em>Green circles mark each detected bolt's outer perimeter, green dots mark the detected center of each bolt, and the blue dot marks the computed origin (average of all bolt centers).</em>
+       <em>Green Circles Mark each Detected Bolt's Outer Perimeter, Green Dots mark the Detected Center of each bolt, and the Blue Dot marks the Computed Origin (Average of all Bolt Centers).</em>
      </p>
      
      <video src="https://github.com/user-attachments/assets/9e853fc7-a148-4d6d-bf81-0cb927b02b10" controls></video>
-     <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured tire hub image, producing the debug overlay and coordinate output.</em></p>
+     <p align="center"><em>Demonstration of detection.py: Bolt Detection running on a Captured Tire Hub Image, producing the Debug Overlay and Coordinate Output.</em></p>
 
    Detection parameters (threshold value, circularity, brightness) were tuned experimentally. See [Results](#results).
 
@@ -145,7 +145,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 
 <p align="center">
   <img src="Media/Pictures/CoreXY_Motion_System.jpg" alt="CoreXY system" width="350"><br>
-  <em>Assembled CoreXY frame with belt/pulley system and drill carriage mounted.</em>
+  <em>Assembled CoreXY Frame with Belt/Pulley System and Drill Carriage Mounted.</em>
 </p>
 
 ### 3. CoreXY Control Logic Subsystem
@@ -175,7 +175,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
   <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
   <img src="Media/Pictures/Physical_Carriage.jpg" width="320">
 </p>
-<p align="center"><em>CAD Design of Carriage in OnShape, and 3D-printed carriage with the repurposed drill motor, sliding plate, and linear actuator.</em></p>
+<p align="center"><em>CAD Design of Carriage in OnShape, and 3D-Printed Carriage with the Repurposed Drill Motor, Sliding Plate, and Linear Actuator.</em></p>
 
 ---
 
@@ -202,10 +202,10 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 ## System Demonstrations
 
 <video src="https://github.com/user-attachments/assets/ca87239c-2418-439b-8eec-c9776f859a82" controls></video>
-<p align="center"><em>Demonstration of main.py from the Computer Vision + Detection Subsystem: running system_check -> camera_capture -> detection end-to-end.</em></p>
+<p align="center"><em>Demonstration of main.py from the Computer Vision + Detection Subsystem: rRunning system_check -> camera_capture -> detection.</em></p>
 
 <video src="https://github.com/user-attachments/assets/794cd37d-d199-41a5-8a0e-480fa2d8a67d" controls></video>
-<p align="center"><em>Demonstration of CoreXY carriage moving to each detected bolt coordinate and the drill engaging/disengaging to fasten and unfasten the lug nuts.</em></p>
+<p align="center"><em>Demonstration of CoreXY Carriage moving to Each Detected Bolt Coordinate and the Drill Engaging/Disengaging to Fasten and Unfasten the Lug Nuts.</em></p>
 
 ---
 
