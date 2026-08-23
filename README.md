@@ -239,4 +239,4 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 
 ## Full Report
  
-[Read the full capstone report](Files/Capstone_Final_Report.pdf)
+[Read the Full Capstone Report](Files/Capstone_Final_Report.pdf)
