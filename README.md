@@ -131,7 +131,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
      </p>
      
      <video src="https://github.com/user-attachments/assets/9e853fc7-a148-4d6d-bf81-0cb927b02b10" controls></video>
-     <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured hub image, producing the debug overlay and coordinate output.</em></p>
+     <p align="center"><em>Demonstration of detection.py: Bolt detection running on a captured tire hub image, producing the debug overlay and coordinate output.</em></p>
 
    Detection parameters (threshold value, circularity, brightness) were tuned experimentally. See [Results](#results).
 
