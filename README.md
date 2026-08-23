@@ -4,7 +4,7 @@ McMaster Engineering Capstone 4OI6A/B, Group S12, Sept 2025 – Apr 2026.
 
 Vision-guided CoreXY gantry that locates lug nuts on a tire hub and drives a motorized drill to fasten/unfasten them with minimal manual intervention.
 
-`Python` `OpenCV` `MicroPython` `Raspberry Pi 4` `Raspberry Pi Pico 2` `ESP32-CAM` `NEMA-17 Stepper Motors` `TMC2209 Stepper Motor Drivers` `TB6612FNG Motor Driver` `BTS7960 Motor Driver` `CoreXY` `Onshape` `3D Printing`
+`Python` `OpenCV` `MicroPython` `Raspberry Pi 4` `Raspberry Pi Pico 2` `ESP32-CAM` `NEMA-17 Stepper Motors` `TMC2209 Stepper Motor Drivers` `TB6612FNG Motor Driver` `BTS7960 Motor Driver` `Buck-Boost Converter` `CoreXY` `Linear Actuator` `Wi-Fi/HTTP` `Onshape` `3D Printing`
 
 <p align="center">
 <img src="Media/Pictures/Physical_System_Setup.jpg" alt="Assembled system" width="500"><br>
