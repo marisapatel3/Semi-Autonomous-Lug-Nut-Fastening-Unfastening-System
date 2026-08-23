@@ -131,7 +131,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
      </p>
      
      <video src="https://github.com/user-attachments/assets/9e853fc7-a148-4d6d-bf81-0cb927b02b10" controls></video>
-     <p align="center"><em>Demonstration of detection.py: Bolt Detection running on a Captured Tire Hub Image, producing the Debug Overlay and Coordinate Output.</em></p>
+     <p align="center"><em>Demonstration of detection.py: Bolt Detection running on a Captured Tire Hub Image, Producing the Debug Overlay and Coordinate Output.</em></p>
 
    Detection parameters (threshold value, circularity, brightness) were tuned experimentally. See [Results](#results).
 
@@ -202,7 +202,7 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 ## System Demonstrations
 
 <video src="https://github.com/user-attachments/assets/ca87239c-2418-439b-8eec-c9776f859a82" controls></video>
-<p align="center"><em>Demonstration of main.py from the Computer Vision + Detection Subsystem: rRunning system_check -> camera_capture -> detection.</em></p>
+<p align="center"><em>Demonstration of main.py from the Computer Vision + Detection Subsystem: Running system_check.py -> camera_capture.py -> detection.py end-to-end.</em></p>
 
 <video src="https://github.com/user-attachments/assets/794cd37d-d199-41a5-8a0e-480fa2d8a67d" controls></video>
 <p align="center"><em>Demonstration of CoreXY Carriage moving to Each Detected Bolt Coordinate and the Drill Engaging/Disengaging to Fasten and Unfasten the Lug Nuts.</em></p>
