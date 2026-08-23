@@ -110,7 +110,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
 2. **`camera_capture.py`**: configures the ESP32-CAM over its `/control` HTTP endpoint (resolution UXGA 1600×1200, JPEG quality 8, LED intensity 150, auto exposure/gain/white-balance enabled), prints the live-stream URL for manual tire-hub positioning, then when user presses ENTER pulls a still frame from `/capture`, decodes it with OpenCV, and crops it to the center 60%×80% of the frame (`CROP_X 0.20–0.80`, `CROP_Y 0.10–0.90`). Saves the photo taken as `latest_capture.jpg`.
 
    <video src="https://github.com/user-attachments/assets/d76f85b7-5c18-4564-a833-d9e7e13e0686" controls></video>
-   <p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image capture from the ESP32-CAM.</em></p>
+   <p align="center"><em>Demonstration of camera_capture.py: Starts live stream, positioning done by user, and still-image captured from the ESP32-CAM.</em></p>
 
 3. **`detection.py`**: the actual bolt detection logic:
    - Grayscale: 7×7 Gaussian blur
