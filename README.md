@@ -175,7 +175,7 @@ Power: 12V rechargeable LiPo, stepped down by a buck-boost converter to a shared
   <img src="Media/Pictures/CAD_Carriage.jpg" width="350">
   <img src="Media/Pictures/Physical_Carriage.jpg" width="316">
 </p>
-<p align="center"><em>CAD Design of Carriage in OnShape, and 3D-Printed Carriage with the Repurposed Drill Motor, Sliding Plate, and Linear Actuator.</em></p>
+<p align="center"><em>CAD Design of Carriage in Onshape, and 3D-Printed Carriage with the Repurposed Drill Motor, Sliding Plate, and Linear Actuator.</em></p>
 
 ---
 
@@ -212,7 +212,7 @@ Successful completion produces `lug_coordinates.json`, `lug_coordinates.txt`, an
 ## Results
 
 - **Bolt Detection:** Reliable once bolt surfaces were painted matte black. Optimal LED brightness of 150/255, threshold value 100, and circularity ≥ 0.6 were the tuned values for detecting all bolts without noise.
-- **CoreXY Positioning:** High repeatability at a stable **~6 mm/s**. Diagonal motion caused vibration at higher speeds, resolved by reducing speed and tensioning belts.
+- **CoreXY Positioning:** High repeatability at a stable **~6mm/s**. Diagonal motion caused vibration at higher speeds, resolved by reducing speed and tensioning belts.
 - **Drill/Actuator:** Consistently engaged, rotated, and disengaged across multiple cycles.
 - **End-to-End:** Full pipeline executed successfully with minimal manual intervention between stages.
 
